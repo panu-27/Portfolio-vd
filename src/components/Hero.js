@@ -137,7 +137,7 @@ export default function Hero() {
         }
       `}</style>
 
-      <section className="hero-viewport">
+      <section id="home" className="hero-viewport">
         {!imageLoaded && <div className="yt-loader" />}
 
         {/* Image — fades out when video takes over */}

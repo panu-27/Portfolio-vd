@@ -188,7 +188,7 @@ const Blogs = () => {
                 @media (max-width: 520px) { .blg-section { padding: 48px 20px 60px; } }
             `}</style>
 
-            <div className="blg-section">
+            <div id="blogs" className="blg-section">
                 <div className="blg-header">
                     <h2 className="blg-title">Read Blogs</h2>
                     <div className="blg-nav">

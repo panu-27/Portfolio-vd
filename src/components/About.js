@@ -11,7 +11,7 @@ const socials = [
 
 export default function About() {
   return (
-    <section className="about-section">
+    <section id="about" className="about-section">
       <style>{`
                 .about-section {
                     background: #000;

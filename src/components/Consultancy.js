@@ -20,7 +20,7 @@ export default function Consultancy() {
     };
 
     return (
-        <section className="cons-section">
+        <section id="consultancy" className="cons-section">
             <style>{`
                 .cons-section {
                     background: #000;

@@ -238,7 +238,7 @@ const Events = () => {
                 @media (max-width: 520px) { .evt-section { padding: 30px 20px 30px; } }
             `}</style>
 
-            <div className="evt-section">
+            <div id="events" className="evt-section">
                 <div className="masonry-gallery">
                     {masonryPhotos.map((photoUrl, i) => (
                         <div key={i} className="masonry-item">

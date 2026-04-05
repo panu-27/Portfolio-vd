@@ -27,6 +27,18 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleNavClick = (e, href, name) => {
+    e.preventDefault();
+    setActive(name);
+    const id = href.replace('#', '');
+    const el = document.getElementById(id);
+    if (el) {
+      const navbarHeight = 72;
+      const top = el.getBoundingClientRect().top + window.scrollY - navbarHeight;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  };
+
   if (!mounted) return null;
 
   return (
@@ -279,7 +291,7 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={`nb-link${active === item.name ? " active" : ""}`}
-                  onClick={() => setActive(item.name)}
+                  onClick={(e) => handleNavClick(e, item.href, item.name)}
                   onMouseEnter={() => setHovered(item.name)}
                   onMouseLeave={() => setHovered(null)}
                 >
@@ -341,7 +353,7 @@ export default function Navbar() {
                   <Link
                     href={item.href}
                     className={`nb-mobile-link${active === item.name ? " active" : ""}`}
-                    onClick={() => { setActive(item.name); setIsOpen(false); }}
+                    onClick={(e) => { handleNavClick(e, item.href, item.name); setIsOpen(false); }}
                   >
                     {item.name}
                   </Link>
