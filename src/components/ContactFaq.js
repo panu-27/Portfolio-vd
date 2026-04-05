@@ -109,54 +109,91 @@ export default function ContactFaq() {
           transition: background 0.2s ease;
         }
 
-        /* ── MODAL UI ── */
+        /* ── FULL PAGE MODAL ── */
         .modal-overlay {
           position: fixed;
           inset: 0;
-          background: rgba(0,0,0,0.85);
-          backdrop-filter: blur(12px);
+          background: #000;
           z-index: 1000;
           display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 24px;
-        }
-
-        .modal-content {
-          background: linear-gradient(145deg, #111, #050505);
-          border: 1px solid rgba(255,255,255,0.15);
-          width: 100%;
-          max-width: 600px;
-          border-radius: 32px;
-          padding: 48px;
-          position: relative;
-          box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+          flex-direction: column;
+          overflow-y: auto;
         }
 
         .modal-close {
-          position: absolute;
-          top: 24px;
-          right: 24px;
-          color: rgba(255,255,255,0.4);
+          position: fixed;
+          top: 28px;
+          right: 32px;
+          z-index: 1010;
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.06);
+          border: 1px solid rgba(255,255,255,0.12);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgba(255,255,255,0.6);
           cursor: pointer;
-          transition: color 0.2s;
+          transition: all 0.2s ease;
         }
-        .modal-close:hover { color: #fff; }
+        .modal-close:hover {
+          background: rgba(255,255,255,0.12);
+          color: #fff;
+        }
+
+        .modal-content {
+          flex: 1;
+          max-width: 900px;
+          width: 100%;
+          margin: 0 auto;
+          padding: 100px 48px 80px;
+          box-sizing: border-box;
+        }
+
+        .modal-eyebrow {
+          font-size: 0.72rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.25em;
+          color: rgba(255,255,255,0.3);
+          margin-bottom: 28px;
+        }
 
         .modal-q {
-          font-family: 'Bebas Neue', sans-serif;
-          font-size: 2rem;
+          font-family: 'Syne', sans-serif;
+          font-size: clamp(1.1rem, 2.5vw, 1.9rem);
+          font-weight: 400;
           color: #fff;
-          margin-bottom: 20px;
-          line-height: 1.1;
-          letter-spacing: 0.03em;
+          line-height: 1.3;
+          letter-spacing: -0.01em;
+          margin-bottom: 36px;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+          padding-bottom: 32px;
+        }
+
+        .modal-img {
+          width: 100%;
+          border-radius: 20px;
+          overflow: hidden;
+          margin-bottom: 48px;
+          border: 1px solid rgba(255,255,255,0.06);
+          aspect-ratio: 16/7;
+        }
+        .modal-img img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: grayscale(100%) contrast(1.05) brightness(0.8);
+          display: block;
         }
 
         .modal-a {
-          font-size: 16px;
-          line-height: 1.6;
-          color: rgba(255,255,255,0.7);
-          margin-bottom: 32px;
+          font-size: clamp(1rem, 2vw, 1.2rem);
+          line-height: 1.9;
+          color: rgba(255,255,255,0.65);
+          margin-bottom: 48px;
+          max-width: 720px;
         }
 
         .modal-cta {
@@ -165,15 +202,16 @@ export default function ContactFaq() {
           gap: 12px;
           background: #fff;
           color: #000;
-          padding: 14px 28px;
-          border-radius: 999px;
+          padding: 16px 32px;
+          border-radius: 100px;
           font-weight: 700;
           text-decoration: none;
-          font-size: 14px;
+          font-size: 0.9rem;
           text-transform: uppercase;
-          transition: transform 0.2s;
+          letter-spacing: 0.05em;
+          transition: all 0.3s ease;
         }
-        .modal-cta:hover { transform: scale(1.05); }
+        .modal-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,255,255,0.15); }
 
         /* TABLET ≤ 860px */
         @media (max-width: 860px) {
@@ -192,7 +230,7 @@ export default function ContactFaq() {
             height: 40px;
             margin-top: 2px;
           }
-          .modal-content { padding: 32px; }
+          .modal-content { padding: 80px 32px 60px; }
         }
 
         /* MOBILE ≤ 480px */
@@ -205,9 +243,12 @@ export default function ContactFaq() {
           }
           .faq-question { font-size: 13px; }
           .faq-arrow-circle { width: 36px; height: 36px; }
-          .modal-content { padding: 24px; border-radius: 24px; }
-          .modal-q { font-size: 1.6rem; }
-          .modal-a { font-size: 14px; }
+          .modal-content { padding: 64px 20px 48px; }
+          .modal-close { top: 16px; right: 16px; }
+          .modal-q { font-size: 1rem; line-height: 1.4; margin-bottom: 24px; padding-bottom: 20px; }
+          .modal-a { font-size: 0.9rem; line-height: 1.75; margin-bottom: 32px; }
+          .modal-img { aspect-ratio: 4/3; margin-bottom: 28px; }
+          .modal-eyebrow { margin-bottom: 16px; }
         }
       `}</style>
 
@@ -240,24 +281,38 @@ export default function ContactFaq() {
                      initial={{ opacity: 0 }}
                      animate={{ opacity: 1 }}
                      exit={{ opacity: 0 }}
-                     onClick={() => setSelectedFaq(null)}
+                     transition={{ duration: 0.3 }}
                   >
+                     {/* Close Button */}
+                     <div className="modal-close" onClick={() => setSelectedFaq(null)}>
+                        <X size={18} />
+                     </div>
+
                      <motion.div
                         className="modal-content"
-                        initial={{ scale: 0.9, opacity: 0, y: 20 }}
-                        animate={{ scale: 1, opacity: 1, y: 0 }}
-                        exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                        onClick={(e) => e.stopPropagation()}
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 20 }}
+                        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                      >
-                        <div className="modal-close" onClick={() => setSelectedFaq(null)}>
-                           <X size={24} />
+                        <div className="modal-eyebrow">FAQ — VD Patil</div>
+
+                        <h2 className="modal-q">{selectedFaq.question}</h2>
+
+                        {/* Contextual Image */}
+                        <div className="modal-img">
+                           <img
+                              src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=1200&auto=format&fit=crop"
+                              alt="VD Patil Coaching"
+                           />
                         </div>
-                        <h3 className="modal-q">{selectedFaq.question}</h3>
+
                         <p className="modal-a">{selectedFaq.answer}</p>
+
                         {selectedFaq.cta && (
                            <a href={selectedFaq.cta.link} className="modal-cta">
                               {selectedFaq.cta.label}
-                              {selectedFaq.cta.icon === "calendar" ? <Calendar size={18} /> : <ExternalLink size={18} />}
+                              {selectedFaq.cta.icon === "calendar" ? <Calendar size={16} /> : <ExternalLink size={16} />}
                            </a>
                         )}
                      </motion.div>
