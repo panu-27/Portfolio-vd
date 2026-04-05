@@ -27,12 +27,14 @@ const EVENT_DATA = {
         content: [
             { type: 'intro', text: "The 10X Leadership Summit is our flagship event designed to radically transform the way you approach business, team management, and scale." },
             { type: 'paragraph', text: "Over three intensive days, we decode the blueprints of the world's most successful organizations. We don't teach theory; we install operational frameworks that have generated hundreds of millions of dollars in collective revenue for our alumni." },
-            { type: 'heading', text: "What You Will Experience" },
-            { type: 'bullets', items: [
-                "Day 1: The Psychology of the 10X Founder - Dismantling limiting beliefs and architecting your new reality.",
-                "Day 2: System Architecture - Building operations and hiring protocols that don't rely on your constant input.",
-                "Day 3: Scale & Dominion - Mastering ethical persuasion, market penetration, and massive sales strategies."
-            ]},
+            { type: 'heading', text: "What People Experienced" },
+            {
+                type: 'bullets', items: [
+                    "Day 1: The Psychology of the 10X Founder - Dismantling limiting beliefs and architecting your new reality.",
+                    "Day 2: System Architecture - Building operations and hiring protocols that don't rely on your constant input.",
+                    "Day 3: Scale & Dominion - Mastering ethical persuasion, market penetration, and massive sales strategies."
+                ]
+            },
             { type: 'paragraph', text: "Join hundreds of driven entrepreneurs and executives for an experience that guarantees to elevate your standards and your bottom line. Networking opportunities are built directly into the schedule." }
         ]
     },
@@ -306,7 +308,7 @@ export default function EventPost() {
                             <div style={{ fontSize: '14px', fontWeight: 600 }}>{event.location}</div>
                         </div>
                     </div>
-                    
+
                     <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
                         <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <Users size={18} color="rgba(255,255,255,0.8)" />
@@ -337,7 +339,7 @@ export default function EventPost() {
                             <div className="gallery-hero">
                                 <img src={event.gallery[0]} alt="Event hero" />
                             </div>
-                            
+
                             {event.gallery.length > 1 && (
                                 <div className="gallery-grid">
                                     {event.gallery.slice(1, 5).map((img, idx) => (
@@ -372,7 +374,7 @@ export default function EventPost() {
             {/* More Posts Section */}
             <section style={{ backgroundColor: '#050505', borderTop: '1px solid rgba(255,255,255,0.05)', padding: '80px 24px' }}>
                 <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-                    <h2 style={{ fontSize: '1.8rem', fontWeight: 400, marginBottom: 40, fontFamily: "'Syne', sans-serif" }}>Upcoming <span style={{ opacity: 0.3 }}>Events</span></h2>
+                    <h2 style={{ fontSize: '1.8rem', fontWeight: 400, marginBottom: 40, fontFamily: "'Syne', sans-serif" }}>Explore <span style={{ opacity: 0.3 }}>Events</span></h2>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
                         {relatedEvents.map(re => (
                             <Link key={re.id} href={`/event/${re.id}`} className="related-card">
