@@ -30,6 +30,7 @@ export default function ContactForm() {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState("");
     const [formData, setFormData] = useState({ name: "", mobile: "", email: "", message: "" });
+    const [errors, setErrors] = useState({});
     const dropdownRef = useRef(null);
 
     useEffect(() => {
@@ -40,10 +41,68 @@ export default function ContactForm() {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
-    const handleOptionClick = (option) => { setSelectedOption(option); setIsOpen(false); };
+    const validate = () => {
+        const e = {};
+
+        // Full Name: letters and spaces only, 2–60 chars
+        if (!formData.name.trim()) {
+            e.name = "Name is required.";
+        } else if (!/^[a-zA-Z\s]{2,60}$/.test(formData.name.trim())) {
+            e.name = "Enter a valid name (letters only, 2–60 characters).";
+        }
+
+        // Mobile: 10-digit Indian number, optional +91 or 0 prefix
+        const mobile = formData.mobile.replace(/\s+/g, "");
+        if (!mobile) {
+            e.mobile = "Mobile number is required.";
+        } else if (!/^(\+91|0)?[6-9]\d{9}$/.test(mobile)) {
+            e.mobile = "Enter a valid 10-digit Indian mobile number.";
+        }
+
+        // Email: standard format
+        if (!formData.email.trim()) {
+            e.email = "Email is required.";
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+            e.email = "Enter a valid email address.";
+        }
+
+        // Inquiry Type: must be selected
+        if (!selectedOption) {
+            e.inquiry = "Please select an inquiry type.";
+        }
+
+        // Message: 10–500 chars
+        if (!formData.message.trim()) {
+            e.message = "Message is required.";
+        } else if (formData.message.trim().length < 10) {
+            e.message = "Message must be at least 10 characters.";
+        } else if (formData.message.trim().length > 500) {
+            e.message = "Message cannot exceed 500 characters.";
+        }
+
+        return e;
+    };
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+        // Clear error on change
+        if (errors[e.target.name]) setErrors({ ...errors, [e.target.name]: "" });
+    };
+
+    const handleOptionClick = (option) => {
+        setSelectedOption(option);
+        setIsOpen(false);
+        if (errors.inquiry) setErrors({ ...errors, inquiry: "" });
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        const validationErrors = validate();
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+            return;
+        }
+        setErrors({});
         alert("Your message has been sent successfully.");
     };
 
@@ -242,7 +301,15 @@ export default function ContactForm() {
                     transition: border-color 0.2s;
                 }
                 .cf-input:focus { outline: none; border-color: rgba(255,255,255,0.25); }
+                .cf-input.error { border-color: rgba(255,80,80,0.5); }
                 textarea.cf-input { resize: none; height: 100px; min-height: 100px; max-height: 100px; }
+
+                .cf-error {
+                    color: rgba(255,80,80,0.85);
+                    font-size: 0.68rem;
+                    font-weight: 600;
+                    margin-top: 2px;
+                }
 
                 .cf-dropdown { position: relative; width: 100%; }
                 .cf-dropdown-header {
@@ -260,6 +327,7 @@ export default function ContactForm() {
                 }
                 .cf-dropdown-header:hover { border-color: rgba(255,255,255,0.25); }
                 .cf-dropdown-header.placeholder { color: rgba(255,255,255,0.2); }
+                .cf-dropdown-header.error { border-color: rgba(255,80,80,0.5); }
                 .cf-dropdown-list {
                     position: absolute;
                     top: calc(100% + 4px);
@@ -338,8 +406,6 @@ export default function ContactForm() {
                             </div>
                         ))}
                     </div>
-
-
                 </div>
 
                 {/* ── RIGHT: Form ── */}
@@ -347,24 +413,65 @@ export default function ContactForm() {
                     <h3 className="cf-title">Send a Message</h3>
                     <div className="cf-subtitle">Fill in the details and we'll get back to you.</div>
 
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} noValidate>
                         <div className="cf-grid">
+
+                            {/* Full Name */}
                             <div className="cf-field-group">
                                 <label className="cf-label">Full Name</label>
-                                <input type="text" name="name" className="cf-input" placeholder="Your name" value={formData.name} onChange={handleChange} required />
+                                <input
+                                    type="text"
+                                    name="name"
+                                    className={`cf-input${errors.name ? ' error' : ''}`}
+                                    placeholder="Your name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    maxLength={60}
+                                    autoComplete="name"
+                                />
+                                {errors.name && <span className="cf-error">{errors.name}</span>}
                             </div>
+
+                            {/* Mobile */}
                             <div className="cf-field-group">
                                 <label className="cf-label">Mobile</label>
-                                <input type="tel" name="mobile" className="cf-input" placeholder="+91 00000 00000" value={formData.mobile} onChange={handleChange} required />
+                                <input
+                                    type="tel"
+                                    name="mobile"
+                                    className={`cf-input${errors.mobile ? ' error' : ''}`}
+                                    placeholder="9876543210"
+                                    value={formData.mobile}
+                                    onChange={handleChange}
+                                    maxLength={10}
+                                    autoComplete="tel"
+                                />
+                                {errors.mobile && <span className="cf-error">{errors.mobile}</span>}
                             </div>
+
+                            {/* Email */}
                             <div className="cf-field-group">
                                 <label className="cf-label">Email</label>
-                                <input type="email" name="email" className="cf-input" placeholder="you@email.com" value={formData.email} onChange={handleChange} required />
+                                <input
+                                    type="email"
+                                    name="email"
+                                    className={`cf-input${errors.email ? ' error' : ''}`}
+                                    placeholder="you@email.com"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    maxLength={100}
+                                    autoComplete="email"
+                                />
+                                {errors.email && <span className="cf-error">{errors.email}</span>}
                             </div>
+
+                            {/* Inquiry Type */}
                             <div className="cf-field-group" ref={dropdownRef}>
                                 <label className="cf-label">Inquiry Type</label>
                                 <div className={`cf-dropdown ${isOpen ? 'open' : ''}`}>
-                                    <div className={`cf-dropdown-header ${!selectedOption ? 'placeholder' : ''}`} onClick={() => setIsOpen(!isOpen)}>
+                                    <div
+                                        className={`cf-dropdown-header${!selectedOption ? ' placeholder' : ''}${errors.inquiry ? ' error' : ''}`}
+                                        onClick={() => setIsOpen(!isOpen)}
+                                    >
                                         {selectedOption || "Select Type"}
                                         <ChevronDown size={15} />
                                     </div>
@@ -374,11 +481,28 @@ export default function ContactForm() {
                                         ))}
                                     </div>
                                 </div>
+                                {errors.inquiry && <span className="cf-error">{errors.inquiry}</span>}
                             </div>
+
+                            {/* Message */}
                             <div className="cf-field-group cf-full">
-                                <label className="cf-label">Message</label>
-                                <textarea name="message" className="cf-input" placeholder="How can we help you?" value={formData.message} onChange={handleChange} required></textarea>
+                                <label className="cf-label">
+                                    Message
+                                    <span style={{ color: 'rgba(255,255,255,0.2)', fontWeight: 400, marginLeft: 6 }}>
+                                        ({formData.message.length}/500)
+                                    </span>
+                                </label>
+                                <textarea
+                                    name="message"
+                                    className={`cf-input${errors.message ? ' error' : ''}`}
+                                    placeholder="How can we help you?"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    maxLength={500}
+                                />
+                                {errors.message && <span className="cf-error">{errors.message}</span>}
                             </div>
+
                         </div>
                         <button type="submit" className="cf-submit">Send Message</button>
                     </form>

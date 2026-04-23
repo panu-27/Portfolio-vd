@@ -11,14 +11,12 @@ export default function Hero() {
   const HERO_IMG = "https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&h=400&auto=format&fit=crop";
   const VIDEO_SRC = "https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4";
 
-  // Fix for cached images — check if already loaded on mount
   useEffect(() => {
     if (imgRef.current?.complete) {
       setImageLoaded(true);
     }
   }, []);
 
-  // 5 sec timer after image loads → show video
   useEffect(() => {
     if (!imageLoaded) return;
     const timer = setTimeout(() => setShowVideo(true), 5000);
@@ -85,6 +83,7 @@ export default function Hero() {
           pointer-events: none;
         }
 
+        /* ── DESKTOP / TABLET (default) ── */
         .bottom-left-ui {
           position: absolute;
           bottom: 70px;
@@ -135,12 +134,35 @@ export default function Hero() {
           letter-spacing: 0.2em;
           color: rgba(255,255,255,0.3);
         }
+
+        /* ── MOBILE FIXES (≤ 640px) ── */
+        @media (max-width: 640px) {
+          .bottom-left-ui {
+            bottom: 16px;
+            left: 16px;
+          }
+
+          .bottom-right-ui {
+            left: 16px;
+            right: 16px;
+            bottom: 90px;
+          }
+
+          .event-card {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px 16px;
+          }
+
+          .social-icons {
+            gap: 18px;
+          }
+        }
       `}</style>
 
       <section id="home" className="hero-viewport">
         {!imageLoaded && <div className="yt-loader" />}
 
-        {/* Image — fades out when video takes over */}
         <img
           ref={imgRef}
           src={HERO_IMG}
@@ -150,7 +172,6 @@ export default function Hero() {
           onLoad={() => setImageLoaded(true)}
         />
 
-        {/* Video — fades in after 5s */}
         {showVideo && (
           <video
             className="hero-video"
@@ -178,9 +199,19 @@ export default function Hero() {
         >
           <p className="ui-label">Be part of our journey</p>
           <div className="social-icons">
-            <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg></a>
-            <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 24.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg></a>
-            <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29.1 29.1 0 0 0 1 12a29.1 29.1 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29.1 29.1 0 0 0 23 12a29.1 29.1 0 0 0-.46-5.58z" /><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" /></svg></a>
+            {/* Instagram */}
+            <a href="https://www.instagram.com/vdpes.official/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
+            </a>
+            {/* X (Twitter) */}
+            <a href="https://www.facebook.com/profile.php?id=61575354415543" target="_blank" rel="noopener noreferrer">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+</svg>            </a>
+            {/* YouTube */}
+            <a href="https://www.youtube.com/@vdpes_official" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29.1 29.1 0 0 0 1 12a29.1 29.1 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29.1 29.1 0 0 0 23 12a29.1 29.1 0 0 0-.46-5.58z" /><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" /></svg>
+            </a>
           </div>
         </motion.div>
 

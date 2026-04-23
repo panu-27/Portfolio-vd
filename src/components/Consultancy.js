@@ -58,7 +58,6 @@ export default function Consultancy() {
                 }
                 .cons-image-wrapper:hover .cons-image {
                     filter: grayscale(0%) contrast(1.1);
-                    transform: scale(1.03);
                 }
                 .cons-image-overlay {
                     position: absolute;
@@ -86,6 +85,8 @@ export default function Consultancy() {
                     line-height: 1.8;
                     margin: 0 0 40px 0;
                     max-width: 90%;
+                    text-align: justify;
+    hyphens: auto;
                 }
                 
                 /* Pills Area */
@@ -104,16 +105,20 @@ export default function Consultancy() {
                     margin-bottom: 48px;
                 }
                 .cons-pill {
-                    padding: 10px 20px;
-                    border: 1px solid rgba(255,255,255,0.15);
-                    border-radius: 100px;
-                    color: rgba(255,255,255,0.85);
-                    font-size: 0.9rem;
-                    font-weight: 500;
-                    background: rgba(255,255,255,0.03);
-                    cursor: default;
-                    transition: all 0.3s ease;
-                }
+    padding: 10px 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 100px;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: rgba(255,255,255,0.03);
+    cursor: default;
+    transition: all 0.3s ease;
+    
+    /* Add these two lines 👇 */
+    flex: 1 1 auto; 
+    text-align: center;
+}
                 .cons-pill:hover {
                     border-color: rgba(255,255,255,0.4);
                     background: rgba(255,255,255,0.08);
@@ -171,10 +176,10 @@ export default function Consultancy() {
             <div className="cons-wrapper">
                 {/* Left Side: Photo */}
                 <div className="cons-image-wrapper">
-                    <img 
-                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop" 
-                        alt="VD Patil Consulting" 
-                        className="cons-image" 
+                    <img
+                        src="/coach-hero.png"
+                        alt="VD Patil Consulting"
+                        className="cons-image"
                     />
                     <div className="cons-image-overlay"></div>
                 </div>
@@ -183,9 +188,9 @@ export default function Consultancy() {
                 <div className="cons-content">
                     <h2 className="cons-title">Consultancy</h2>
                     <p className="cons-desc">
-                        My consultancy is not about incremental growth; it's about exponential transformation. I partner with founders and executives to dismantle operational bottlenecks, engineer aggressive sales frameworks, and install elite leadership paradigms that scale rapidly and sustainably.
+                        Our consultancy helps grow your business and scale it successfully. We work with founders and executives to remove bottlenecks, build strong sales systems, and create leadership methods that grow rapidly and sustainably.
                     </p>
-                    
+
                     <div>
                         <div className="cons-pills-label">Core Domains</div>
                         <div className="cons-pills-grid">
