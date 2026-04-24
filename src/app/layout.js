@@ -6,13 +6,23 @@ const outfit = Outfit({ subsets: ["latin"] });
 export const metadata = {
   metadataBase: new URL('https://vdpatil.com'),
   title: {
-    default: 'VD Patil | Master Coach, Speaker & Business Consultant',
+    default: 'VD Patil | Vinayak Dabhade Patil | Master Coach & Consultant',
     template: '%s | VD Patil',
   },
   description:
-    'VD Patil is a world-class business coach, leadership expert, speaker, and consultant helping entrepreneurs and executives achieve 10X growth through elite mindset frameworks, strategic systems, and proven performance blueprints.',
+    'Vinayak Dabhade Patil (VD Patil) is a world-class business coach, leadership expert, speaker, and consultant helping entrepreneurs achieve 10X growth through VDPES (VD Patil Education System).',
   keywords: [
     'VD Patil',
+    'vdpatil',
+    'Vinayak Dabhade',
+    'Vinayak Dabhade Patil',
+    'VDPES',
+    'VD Patil Education System',
+    'vinayak dabhade VDPES',
+    'vinayak dabhade patil',
+    'archearc',
+    'arc studio',
+    'archearc studio',
     'business coach',
     'leadership coach',
     'executive consultant',
@@ -20,14 +30,11 @@ export const metadata = {
     '10X leadership',
     'entrepreneurship coach',
     'high performance coach',
-    'sales trainer',
     'mindset coach India',
-    'VD Patil Education System',
-    'peak performance coach',
   ],
-  authors: [{ name: 'VD Patil', url: 'https://vdpatil.com' }],
-  creator: 'VD Patil',
-  publisher: 'VD Patil Education System',
+  authors: [{ name: 'Vinayak Dabhade Patil (VD Patil)', url: 'https://vdpatil.com' }],
+  creator: 'Vinayak Dabhade Patil',
+  publisher: 'VD Patil Education System (VDPES)',
   robots: {
     index: true,
     follow: true,
@@ -43,24 +50,24 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://vdpatil.com',
-    siteName: 'VD Patil',
-    title: 'VD Patil | Master Coach, Speaker & Business Consultant',
+    siteName: 'Vinayak Dabhade Patil | VD Patil',
+    title: 'VD Patil | Vinayak Dabhade Patil | Master Coach & Business Consultant',
     description:
-      'Helping entrepreneurs and executives achieve 10X growth through elite mindset frameworks, strategic systems, and proven performance blueprints.',
+      'Helping entrepreneurs and executives achieve 10X growth through elite mindset frameworks and VDPES.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'VD Patil - Master Coach & Business Consultant',
+        alt: 'VD Patil (Vinayak Dabhade) - Master Coach & Business Consultant',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'VD Patil | Master Coach, Speaker & Business Consultant',
+    title: 'VD Patil | Vinayak Dabhade Patil | Master Coach',
     description:
-      'Helping entrepreneurs achieve 10X growth. Elite coaching, consulting, and live events.',
+      'Helping entrepreneurs achieve 10X growth through VDPES. Elite coaching and consulting.',
     images: ['/og-image.jpg'],
     creator: '@vdpatil',
   },
@@ -75,8 +82,42 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Vinayak Dabhade Patil",
+      "alternateName": ["VD Patil", "Vinayak Dabhade", "VDPES", "VD Patil Education System", "vdpatil", "archearc", "arc studio"],
+      "url": "https://vdpatil.com",
+      "image": "https://vdpatil.com/og-image.jpg",
+      "jobTitle": "Master Coach, Speaker & Business Consultant",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "VD Patil Education System (VDPES)"
+      },
+      "description": "Vinayak Dabhade Patil (VD Patil) is a world-class business coach, leadership expert, speaker, and consultant. Founder of VDPES (VD Patil Education System)."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "VD Patil - Master Coach",
+      "url": "https://vdpatil.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://vdpatil.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ];
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={outfit.className}>{children}</body>
     </html>
   );
