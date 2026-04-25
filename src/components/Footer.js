@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Footer() {
     return (
@@ -262,8 +263,16 @@ export default function Footer() {
                                 <div className="footer-col-list-wrap">
                                     <div className="footer-col-line" />
                                     <ul className="footer-col-list">
-                                        {['Home', 'About Us', 'Events', 'Blogs', 'VDPES'].map(item => (
-                                            <li key={item} className="footer-col-item">{item}</li>
+                                        {[
+                                            { name: 'Home', href: '/#home' },
+                                            { name: 'About Us', href: '/#about' },
+                                            { name: 'Events', href: '/#events' },
+                                            { name: 'Blogs', href: '/#blogs' },
+                                            { name: 'VDPES', href: '/' }
+                                        ].map(item => (
+                                            <li key={item.name} className="footer-col-item">
+                                                <Link href={item.href} style={{ color: 'inherit', textDecoration: 'none' }}>{item.name}</Link>
+                                            </li>
                                         ))}
                                     </ul>
                                 </div>
@@ -277,8 +286,16 @@ export default function Footer() {
                                 <div className="footer-col-list-wrap">
                                     <div className="footer-col-line" />
                                     <ul className="footer-col-list">
-                                        {['Privacy Policy', 'Term & Condition', 'FAQ', 'Contact Us', 'Cookies Policy'].map(item => (
-                                            <li key={item} className="footer-col-item">{item}</li>
+                                        {[
+                                            { name: 'Privacy Policy', href: '/privacy-policy' },
+                                            { name: 'Term & Condition', href: '/term-condition' },
+                                            { name: 'FAQ', href: '/#faq' },
+                                            { name: 'Contact Us', href: '/#contact' },
+                                            { name: 'Cookies Policy', href: '/cookie-policy' }
+                                        ].map(item => (
+                                            <li key={item.name} className="footer-col-item">
+                                                <Link href={item.href} style={{ color: 'inherit', textDecoration: 'none' }}>{item.name}</Link>
+                                            </li>
                                         ))}
                                     </ul>
                                 </div>

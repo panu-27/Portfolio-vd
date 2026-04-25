@@ -17,10 +17,17 @@ export const metadata = {
   description:
     'Vinayak Dabhade Patil (VD PATIL) is a world-class business coach, leadership expert, speaker, and consultant helping entrepreneurs achieve 10X growth through VDPES (VD Patil Education System).',
   keywords: [
-    'VD Patil',
     'vdpatil',
+    'vd patil',
+    'vd patil coach',
+    'vd patil mentor',
+    'vd patil speaker',
+    'VD Patil',
     'Vinayak Dabhade',
     'Vinayak Dabhade Patil',
+    'Vinayak Dabhade Mentor',
+    'Vinayak Dabhade Coach',
+    'Vinayak Dabhade Speaker',
     'VDPES',
     'VD Patil Education System',
     'vinayak dabhade VDPES',
@@ -105,7 +112,8 @@ export default function RootLayout({ children }) {
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "VD Patil - Master Coach",
+      "name": "VD PATIL",
+      "alternateName": "VD Patil",
       "url": "https://vdpatil.com",
       "potentialAction": {
         "@type": "SearchAction",
