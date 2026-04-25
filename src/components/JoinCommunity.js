@@ -143,7 +143,7 @@ export default function JoinCommunity() {
                 </h2>
 
                 <p className="jc-desc">
-                    Join VD Patil’s private community for business tips,
+                    Join VD PATIL’s private community for business tips,
                     life advice, and team updates. No spam, just value.
                 </p>
 

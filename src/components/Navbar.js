@@ -276,7 +276,7 @@ export default function Navbar() {
         <nav className={`nb-bar${scrolled ? " scrolled" : ""}${isOpen ? " menu-open" : ""}`}>
 
           <Link href="#home" className="nb-brand" aria-label="Home">
-            {/* <img src="/logo.png" alt="VD Patil Logo" className="nb-logo-img" />
+            {/* <img src="/logo.png" alt="VD PATIL Logo" className="nb-logo-img" />
             <div className="nb-brand-text">
               <span className="nb-logo-title">VD PATIL</span>
             </div> */}

@@ -179,7 +179,7 @@ export default function Consultancy() {
                 <div className="cons-image-wrapper">
                     <Image
                         src="/coach-hero.png"
-                        alt="VD Patil Consulting"
+                        alt="VD PATIL Consulting"
                         className="cons-image"
                         width={800}
                         height={1000}

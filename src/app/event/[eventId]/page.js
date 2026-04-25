@@ -15,7 +15,7 @@ const EVENT_DATA = {
         date: "August 15, 2026",
         location: "New York, USA",
         attendees: "500+ Leaders",
-        organizer: "VD Patil Education System",
+        organizer: "VD PATIL Education System",
         heroAccent: '#0034FE',
         gallery: [
             "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&h=600&fit=crop&q=80",
@@ -45,7 +45,7 @@ const EVENT_DATA = {
         date: "September 10, 2026",
         location: "London, UK",
         attendees: "200+ Executives",
-        organizer: "VD Patil",
+        organizer: "VD PATIL",
         heroAccent: '#aaaaaa',
         gallery: [
             "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=600&fit=crop&q=80",
@@ -66,7 +66,7 @@ const EVENT_DATA = {
         date: "October 05, 2026",
         location: "Bali, Indonesia",
         attendees: "50 Exclusive Seats",
-        organizer: "VD Patil Elite",
+        organizer: "VD PATIL Elite",
         heroAccent: '#cccccc',
         gallery: [
             "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&h=600&fit=crop&q=80",
@@ -87,7 +87,7 @@ const EVENT_DATA = {
         date: "November 12, 2026",
         location: "Dubai, UAE",
         attendees: "800+ Sales Professionals",
-        organizer: "VD Patil Education System",
+        organizer: "VD PATIL Education System",
         heroAccent: '#333333',
         gallery: [
             "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&h=600&fit=crop&q=80",
@@ -108,7 +108,7 @@ const EVENT_DATA = {
         date: "December 01, 2026",
         location: "Singapore",
         attendees: "150 Founders",
-        organizer: "VD Patil",
+        organizer: "VD PATIL",
         heroAccent: '#555555',
         gallery: [
             "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&h=600&fit=crop&q=80",
@@ -129,7 +129,7 @@ const EVENT_DATA = {
         date: "January 20, 2027",
         location: "Mumbai, India",
         attendees: "2000+ Attendees",
-        organizer: "VD Patil Events",
+        organizer: "VD PATIL Events",
         heroAccent: '#777777',
         gallery: [
             "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&h=600&fit=crop&q=80",

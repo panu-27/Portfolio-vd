@@ -5,13 +5,13 @@ import { ArrowRight, X, ExternalLink, Calendar } from "lucide-react";
 
 const faqs = [
    {
-      question: "What is the core philosophy behind the VD Patil Education System (VDPES)?",
+      question: "What is the core philosophy behind the VD PATIL Education System (VDPES)?",
       answer: "VDPES is built on the foundation of 'Ethical Leadership & Scalable Excellence.' We provide a structured roadmap for individuals to transition from traditional mindsets to elite entrepreneurial thinking, focusing on financial literacy, team building, and personal mastery.",
       cta: { label: "Explore VDPES", link: "https://vdpes.com/" }
    },
    {
-      question: "How do I apply for exclusive 1-on-1 business mentorship with VD Patil?",
-      answer: "Direct mentorship is reserved for high-impact leaders ready for a radical shift. The process begins with a Discovery Session to audit your current business model and align your goals with VD Patil's proprietary growth frameworks.",
+      question: "How do I apply for exclusive 1-on-1 business mentorship with VD PATIL?",
+      answer: "Direct mentorship is reserved for high-impact leaders ready for a radical shift. The process begins with a Discovery Session to audit your current business model and align your goals with VD PATIL's proprietary growth frameworks.",
       cta: { label: "Book Discovery Session", link: "#contact", icon: "calendar" }
    },
    {
@@ -23,8 +23,8 @@ const faqs = [
       answer: "Life coaching at our firm isn't just about 'feeling good'—it's about Peak Performance. Business leadership focuses on market dominance and ROI. We believe you cannot have a world-class business with a second-class lifestyle.",
    },
    {
-      question: "Is VD Patil available for keynote speaking engagements or live seminars?",
-      answer: "Yes, VD Patil frequently delivers high-energy keynotes on leadership, financial psychology, and organizational culture. You can request a media kit or check availability via the inquiry form.",
+      question: "Is VD PATIL available for keynote speaking engagements or live seminars?",
+      answer: "Yes, VD PATIL frequently delivers high-energy keynotes on leadership, financial psychology, and organizational culture. You can request a media kit or check availability via the inquiry form.",
       cta: { label: "Inquire for Events", link: "#contact" }
    },
    {
@@ -294,7 +294,7 @@ export default function ContactFaq() {
                         exit={{ opacity: 0, y: 20 }}
                         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                      >
-                        <div className="modal-eyebrow">FAQ — VD Patil</div>
+                        <div className="modal-eyebrow">FAQ — VD PATIL</div>
 
                         <h2 className="modal-q">{selectedFaq.question}</h2>
 
@@ -302,7 +302,7 @@ export default function ContactFaq() {
                         <div className="modal-img">
                            <img
                               src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=1200&auto=format&fit=crop"
-                              alt="VD Patil Coaching"
+                              alt="VD PATIL Coaching"
                               width={1200}
                               height={600}
                            />

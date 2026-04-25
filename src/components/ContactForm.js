@@ -13,7 +13,7 @@ const CONTACT_DETAILS = [
     {
         icon: <MapPin size={18} />,
         label: "Office Address",
-        value: "VD Patil Education System,\nPune, Maharashtra, India",
+        value: "VD PATIL Education System,\nPune, Maharashtra, India",
         link: "https://maps.google.com/?q=Pune,Maharashtra,India",
         linkLabel: "Get Directions"
     },

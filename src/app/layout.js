@@ -11,11 +11,11 @@ const barlowCondensed = Barlow_Condensed({ weight: ['300', '400', '700', '800', 
 export const metadata = {
   metadataBase: new URL('https://vdpatil.com'),
   title: {
-    default: 'VD Patil | Vinayak Dabhade Patil | Master Coach & Consultant',
-    template: '%s | VD Patil',
+    default: 'VD PATIL | Vinayak Dabhade Patil | Business Coach & Consultant',
+    template: '%s | VD PATIL',
   },
   description:
-    'Vinayak Dabhade Patil (VD Patil) is a world-class business coach, leadership expert, speaker, and consultant helping entrepreneurs achieve 10X growth through VDPES (VD Patil Education System).',
+    'Vinayak Dabhade Patil (VD PATIL) is a world-class business coach, leadership expert, speaker, and consultant helping entrepreneurs achieve 10X growth through VDPES (VD Patil Education System).',
   keywords: [
     'VD Patil',
     'vdpatil',
@@ -37,9 +37,9 @@ export const metadata = {
     'high performance coach',
     'mindset coach India',
   ],
-  authors: [{ name: 'Vinayak Dabhade Patil (VD Patil)', url: 'https://vdpatil.com' }],
+  authors: [{ name: 'Vinayak Dabhade Patil (VD PATIL)', url: 'https://vdpatil.com' }],
   creator: 'Vinayak Dabhade Patil',
-  publisher: 'VD Patil Education System (VDPES)',
+  publisher: 'VD PATIL Education System (VDPES)',
   robots: {
     index: true,
     follow: true,
@@ -55,8 +55,8 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://vdpatil.com',
-    siteName: 'Vinayak Dabhade Patil | VD Patil',
-    title: 'VD Patil | Vinayak Dabhade Patil | Master Coach & Business Consultant',
+    siteName: 'Vinayak Dabhade Patil | VD PATIL ',
+    title: 'VD PATIL | Vinayak Dabhade Patil | Master Coach & Business Consultant',
     description:
       'Helping entrepreneurs and executives achieve 10X growth through elite mindset frameworks and VDPES.',
     images: [
@@ -64,13 +64,13 @@ export const metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'VD Patil (Vinayak Dabhade) - Master Coach & Business Consultant',
+        alt: 'VD PATIL (Vinayak Dabhade) - Master Coach & Business Consultant',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'VD Patil | Vinayak Dabhade Patil | Master Coach',
+    title: 'VD PATIL | Vinayak Dabhade Patil | Master Coach',
     description:
       'Helping entrepreneurs achieve 10X growth through VDPES. Elite coaching and consulting.',
     images: ['/og-image.jpg'],

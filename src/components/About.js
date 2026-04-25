@@ -162,12 +162,12 @@ export default function About() {
                     <h2 className="about-title">About</h2>
                     <p className="about-desc">
                         {/* Desktop & Tablet paragraph */}
-                        Meet <strong>VD Patil</strong> founder and CEO of <strong>VDPES</strong>, a visionary dedicated to <strong>business growth</strong> and professional success. He doesn't just coach; he <strong>guides</strong> entrepreneurs and leaders who refuse to stay average. Over the last decade, his philosophy has joined <strong>smart business strategy</strong> with clear life goals, creating a trusted standard of excellence that is both practical and measurable. By removing <strong>internal bottlenecks</strong> and building strong mental frameworks, he empowers leaders to cross traditional growth limits. His mission is <strong>Health, Wealth and Happiness</strong>, ensuring that every decision made is a calculated step toward <strong>global impact</strong> and long-term legacy.
+                        Meet <strong>VD PATIL</strong> founder and CEO of <strong>VDPES</strong>, a visionary dedicated to <strong>business growth</strong> and professional success. He doesn't just coach; he <strong>guides</strong> entrepreneurs and leaders who refuse to stay average. Over the last decade, his philosophy has joined <strong>smart business strategy</strong> with clear life goals, creating a trusted standard of excellence that is both practical and measurable. By removing <strong>internal bottlenecks</strong> and building strong mental frameworks, he empowers leaders to cross traditional growth limits. His mission is <strong>Health, Wealth and Happiness</strong>, ensuring that every decision made is a calculated step toward <strong>global impact</strong> and long-term legacy.
                     </p>
 
                     {/* Mobile-only shorter paragraph */}
                     <p className="about-desc-mobile">
-                        Meet <strong>VD Patil</strong> founder and CEO of <strong>VDPES</strong>, dedicated to <strong>business growth</strong> and success. He doesn't just coach; he <strong>guides</strong> entrepreneurs who refuse to settle. His philosophy joins <strong>smart business strategy</strong> with clear life goals, empowering leaders toward <strong>Health, Wealth and Happiness</strong> with lasting legacy.
+                        Meet <strong>VD PATIL</strong> founder and CEO of <strong>VDPES</strong>, dedicated to <strong>business growth</strong> and success. He doesn't just coach; he <strong>guides</strong> entrepreneurs who refuse to settle. His philosophy joins <strong>smart business strategy</strong> with clear life goals, empowering leaders toward <strong>Health, Wealth and Happiness</strong> with lasting legacy.
                     </p>
 
                     <div className="social-grid">
@@ -182,7 +182,7 @@ export default function About() {
                 <div className="about-image-wrapper">
                     <Image
                         src="/coach-hero.png"
-                        alt="VD Patil"
+                        alt="VD PATIL"
                         className="about-image"
                         width={800}
                         height={1000}
