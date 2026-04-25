@@ -25,12 +25,12 @@ export default function Contact() {
         .nav-link:hover { color: #fff !important; }
       `}</style>
 
-         <div id="contact">
+         <div>
 
-         {/* ══════════════════════════════════════
+            {/* ══════════════════════════════════════
           FOOTER SECTION
       ══════════════════════════════════════ */}
-         <Footer />
+            <Footer />
          </div>
       </div>
    );

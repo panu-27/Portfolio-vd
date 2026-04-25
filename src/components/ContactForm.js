@@ -107,7 +107,7 @@ export default function ContactForm() {
     };
 
     return (
-        <section id="contact-form" className="cf-container">
+        <section id="contact" className="cf-container">
             <style>{`
                 .cf-container {
                     background: #000;

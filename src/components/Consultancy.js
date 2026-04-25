@@ -1,6 +1,7 @@
 'use client';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const EXPERTISE_PILLS = [
     "Executive Leadership",
@@ -204,7 +205,10 @@ export default function Consultancy() {
                         </div>
                     </div>
 
-                    <a href="#contact-form" onClick={handleScrollToContact} className="cons-btn">
+                    <a href="#contact" onClick={(e) => {
+                        e.preventDefault();
+                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    }} className="cons-btn" style={{ textDecoration: 'none' }}>
                         Book a Consultancy <ArrowRight size={18} />
                     </a>
                 </div>

@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
@@ -246,12 +247,17 @@ export default function Footer() {
                         <div className="footer-left">
                             <p className="footer-tagline">Ready to unlock your full potential?</p>
                             <h2 className="footer-headline">Let's Grow Together</h2>
-                            <button className="footer-btn">
+                            <a href="/#contact" onClick={(e) => {
+                                if (window.location.pathname === '/') {
+                                    e.preventDefault();
+                                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }} className="footer-btn" style={{ textDecoration: 'none' }}>
                                 <span className="footer-btn-label">Book a Discovery Call</span>
                                 <div className="footer-btn-icon">
                                     <ArrowUpRight size={18} color="#fff" strokeWidth={2.5} />
                                 </div>
-                            </button>
+                            </a>
                         </div>
 
                         <div className="footer-right">
