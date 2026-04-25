@@ -9,7 +9,7 @@ const barlow = Barlow({ weight: ['300', '400', '700', '800', '900'], subsets: ['
 const barlowCondensed = Barlow_Condensed({ weight: ['300', '400', '700', '800', '900'], subsets: ['latin'], variable: '--font-barlow-cond' });
 
 export const metadata = {
-  metadataBase: new URL('https://vdpatil.com'),
+  metadataBase: new URL('https://www.vdpatil.com'),
   alternates: {
     canonical: '/',
   },
@@ -47,7 +47,7 @@ export const metadata = {
     'high performance coach',
     'mindset coach India',
   ],
-  authors: [{ name: 'Vinayak Dabhade Patil (VD PATIL)', url: 'https://vdpatil.com' }],
+  authors: [{ name: 'Vinayak Dabhade Patil (VD PATIL)', url: 'https://www.vdpatil.com' }],
   creator: 'Vinayak Dabhade Patil',
   publisher: 'VD PATIL Education System (VDPES)',
   robots: {
@@ -64,7 +64,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://vdpatil.com',
+    url: 'https://www.vdpatil.com',
     siteName: 'Vinayak Dabhade Patil | VD PATIL ',
     title: 'VD PATIL | Vinayak Dabhade Patil | Master Coach & Business Consultant',
     description:
@@ -103,8 +103,8 @@ export default function RootLayout({ children }) {
       "@type": "Person",
       "name": "Vinayak Dabhade Patil",
       "alternateName": ["VD Patil", "Vinayak Dabhade", "VDPES", "VD Patil Education System", "vdpatil", "archearc", "arc studio"],
-      "url": "https://vdpatil.com",
-      "image": "https://vdpatil.com/og-image.jpg",
+      "url": "https://www.vdpatil.com",
+      "image": "https://www.vdpatil.com/og-image.jpg",
       "jobTitle": "Master Coach, Speaker & Business Consultant",
       "worksFor": {
         "@type": "Organization",
@@ -117,10 +117,10 @@ export default function RootLayout({ children }) {
       "@type": "WebSite",
       "name": "VD PATIL",
       "alternateName": "VD Patil",
-      "url": "https://vdpatil.com",
+      "url": "https://www.vdpatil.com",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://vdpatil.com/search?q={search_term_string}",
+        "target": "https://www.vdpatil.com/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
