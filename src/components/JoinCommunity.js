@@ -149,9 +149,10 @@ export default function JoinCommunity() {
 
                 <div className="jc-cta-wrapper">
                     <a
-                        href="https://wa.me/your_number_here"
+                        href="#"
+                        onClick={(e) => e.preventDefault()}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="nofollow noopener noreferrer"
                         className="jc-whatsapp-btn"
                     >
                         <MessageCircle size={20} fill="currentColor" />
