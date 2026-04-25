@@ -239,7 +239,7 @@ export default function Hero() {
         </motion.div>
 
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <h2 style={{
+          <h1 style={{
             fontFamily: 'var(--font-syne)',
             fontSize: '12vw',
             fontWeight: 800,
@@ -248,7 +248,7 @@ export default function Hero() {
             letterSpacing: '-0.05em'
           }}>
             VD PATIL
-          </h2>
+          </h1>
         </div>
       </section>
     </>

@@ -10,6 +10,9 @@ const barlowCondensed = Barlow_Condensed({ weight: ['300', '400', '700', '800', 
 
 export const metadata = {
   metadataBase: new URL('https://vdpatil.com'),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     default: 'VD PATIL | Vinayak Dabhade Patil | Business Coach & Consultant',
     template: '%s | VD PATIL',
