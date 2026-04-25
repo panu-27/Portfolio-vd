@@ -84,7 +84,7 @@ const Blogs = () => {
                 .blg-section {
                     background: #000;
                     padding: 80px 48px 96px;
-                    font-family: 'Montserrat', system-ui, sans-serif;
+                    font-family: var(--font-mont), system-ui, sans-serif;
                     width: 100%;
                     position: relative;
                     box-sizing: border-box;

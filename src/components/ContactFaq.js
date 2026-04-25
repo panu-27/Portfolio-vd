@@ -39,18 +39,17 @@ export default function ContactFaq() {
    return (
       <>
          <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap');
-
+        
         .faq-section {
           background: #000;
           padding: 80px 48px 96px;
           box-sizing: border-box;
-          font-family: 'Montserrat', sans-serif;
+          font-family: var(--font-mont), sans-serif;
           position: relative;
         }
 
         .faq-heading {
-          font-family: 'Bebas Neue', sans-serif;
+          font-family: var(--font-bebas), sans-serif;
           font-weight: 800;
           font-size: clamp(2rem, 4vw, 3.2rem);
           letter-spacing: 0.02em;
@@ -161,7 +160,7 @@ export default function ContactFaq() {
         }
 
         .modal-q {
-          font-family: 'Syne', sans-serif;
+          font-family: var(--font-syne), sans-serif;
           font-size: clamp(1.1rem, 2.5vw, 1.9rem);
           font-weight: 400;
           color: #fff;
@@ -304,6 +303,8 @@ export default function ContactFaq() {
                            <img
                               src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=1200&auto=format&fit=crop"
                               alt="VD Patil Coaching"
+                              width={1200}
+                              height={600}
                            />
                         </div>
 

@@ -94,7 +94,7 @@ const Events = () => {
                 .evt-section {
                     background: #000;
                     padding: 40px 48px 40px; /* Reduced padding to fit well above blogs */
-                    font-family: 'Montserrat', system-ui, sans-serif;
+                    font-family: var(--font-mont), system-ui, sans-serif;
                     width: 100%;
                     position: relative;
                     box-sizing: border-box;
@@ -180,7 +180,7 @@ const Events = () => {
                 }
                 .evt-card-meta {
                     font-size: 0.75rem;
-                    color: rgba(255,255,255,0.4);
+                    color: rgba(255,255,255,0.7);
                     margin-bottom: 12px;
                     font-weight: 600;
                     text-transform: uppercase;
@@ -242,7 +242,7 @@ const Events = () => {
                 <div className="masonry-gallery">
                     {masonryPhotos.map((photoUrl, i) => (
                         <div key={i} className="masonry-item">
-                            <img src={photoUrl} alt={`Atmosphere ${i + 1}`} loading="lazy" />
+                            <img src={photoUrl} alt={`Atmosphere ${i + 1}`} loading="lazy" width={600} height={400} />
                         </div>
                     ))}
                 </div>

@@ -7,12 +7,11 @@ export default function Contact() {
    return (
       <div
          className="bg-black text-white selection:bg-white selection:text-black"
-         style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+         style={{ fontFamily: "var(--font-barlow-cond), sans-serif" }}
       >
          {/* ── Font Import ── */}
          <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;800;900&display=swap');
-        .faq-item:hover .faq-arrow-circle {
+                .faq-item:hover .faq-arrow-circle {
           background: #fff !important;
           border-color: #fff !important;
         }

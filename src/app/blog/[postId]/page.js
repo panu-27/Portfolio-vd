@@ -148,7 +148,7 @@ function BlogHero({ post }) {
                 lineHeight: 1.2,
                 padding: '0 48px',
                 position: 'relative',
-                fontFamily: "'Syne', sans-serif"
+                fontFamily: "var(--font-syne), sans-serif"
             }}>
                 {post.title}
             </h2>
@@ -165,7 +165,7 @@ function ContentBlock({ block }) {
         case 'paragraph':
             return <p style={{ ...textStyle, fontSize: '1.1rem', marginBottom: 28 }}>{block.text}</p>;
         case 'heading':
-            return <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#fff', marginTop: 56, marginBottom: 24, fontFamily: "'Syne', sans-serif" }}>{block.text}</h2>;
+            return <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#fff', marginTop: 56, marginBottom: 24, fontFamily: "var(--font-syne), sans-serif" }}>{block.text}</h2>;
         case 'bullets':
             return (
                 <ul style={{ paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 28 }}>
@@ -200,10 +200,9 @@ export default function BlogPost() {
     const relatedPosts = ALL_POSTS_BRIEF.filter(p => String(p.id) !== String(postId)).slice(0, 3);
 
     return (
-        <div style={{ backgroundColor: '#000', minHeight: '100vh', color: '#fff', fontFamily: "'Montserrat', sans-serif" }}>
+        <div style={{ backgroundColor: '#000', minHeight: '100vh', color: '#fff', fontFamily: "var(--font-mont), sans-serif" }}>
             <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700&family=Montserrat:wght@400;500;600&display=swap');
-                .share-btn {
+                                .share-btn {
                     display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px;
                     border-radius: 100px; border: 1px solid rgba(255,255,255,0.1); background: #0a0a0a;
                     color: #fff; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s;
@@ -240,7 +239,7 @@ export default function BlogPost() {
                     fontSize: 'clamp(2.2rem, 5vw, 3.8rem)',
                     fontWeight: 400, color: '#fff',
                     lineHeight: 1.1, marginBottom: 32,
-                    fontFamily: "'Syne', sans-serif",
+                    fontFamily: "var(--font-syne), sans-serif",
                     letterSpacing: '-0.02em'
                 }}>
                     {post.title}
@@ -287,7 +286,7 @@ export default function BlogPost() {
             {/* More Posts Section */}
             <section style={{ backgroundColor: '#050505', borderTop: '1px solid rgba(255,255,255,0.05)', padding: '80px 24px' }}>
                 <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-                    <h2 style={{ fontSize: '1.8rem', fontWeight: 400, marginBottom: 40, fontFamily: "'Syne', sans-serif" }}>More <span style={{ opacity: 0.3 }}>Insights</span></h2>
+                    <h2 style={{ fontSize: '1.8rem', fontWeight: 400, marginBottom: 40, fontFamily: "var(--font-syne), sans-serif" }}>More <span style={{ opacity: 0.3 }}>Insights</span></h2>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
                         {relatedPosts.map(rp => (
                             <Link key={rp.id} href={`/blog/${rp.id}`} className="related-card">

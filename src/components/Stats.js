@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 
 const STATS = [
     { end: 200, suffix: '+', label: 'Individuals Coached' },
-    { end: 45,  suffix: '+', label: 'Workshops Held' },
+    { end: 45, suffix: '+', label: 'Workshops Held' },
     { end: 1000, suffix: '+', label: 'Breakthroughs' },
-    { end: 60,  suffix: '%', label: 'Average Business Growth' },
+    { end: 60, suffix: '%', label: 'Average Business Growth' },
 ];
 
 function Counter({ end, suffix, duration = 2000 }) {
@@ -48,7 +48,7 @@ export default function Stats() {
                     padding: 80px 24px;
                     display: flex;
                     justify-content: center;
-                    font-family: 'Montserrat', system-ui, sans-serif;
+                    font-family: var(--font-mont), system-ui, sans-serif;
                     border-top: 1px solid rgba(255,255,255,0.05);
                     border-bottom: 1px solid rgba(255,255,255,0.05);
                 }
@@ -76,7 +76,7 @@ export default function Stats() {
                     background: rgba(255,255,255,0.02);
                 }
                 .stat-number {
-                    font-family: 'Syne', sans-serif;
+                    font-family: var(--font-syne), sans-serif;
                     font-size: clamp(2.8rem, 5vw, 4.5rem);
                     font-weight: 400;
                     color: #fff;
@@ -89,7 +89,7 @@ export default function Stats() {
                     font-weight: 600;
                     text-transform: uppercase;
                     letter-spacing: 0.12em;
-                    color: rgba(255,255,255,0.35);
+                    color: rgba(255,255,255,0.7);
                 }
 
                 @media (max-width: 768px) {

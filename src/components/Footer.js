@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <>
             <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@700;800;900&family=Barlow+Condensed:wght@700;800;900&display=swap');
+                
 
                 .footer-root {
                     background-color: #000;
@@ -15,7 +15,7 @@ export default function Footer() {
                     padding-left: 18px;
                     position: relative;
                     overflow: hidden;
-                    font-family: 'Barlow', 'Arial Black', sans-serif;
+                    font-family: var(--font-barlow), 'Arial Black', sans-serif;
                     color: #fff;
                     box-sizing: border-box;
                 }
@@ -61,7 +61,7 @@ export default function Footer() {
                 }
 
                 .footer-headline {
-                    font-family: 'Bebas Neue', 'Barlow Condensed', 'Arial Black', sans-serif;
+                    font-family: var(--font-bebas), var(--font-barlow-cond), 'Arial Black', sans-serif;
                     font-size: clamp(4.5rem, 9vw, 8rem);
                     font-weight: 900;
                     margin: 0 0 32px 0;
@@ -257,7 +257,7 @@ export default function Footer() {
                             <div>
                                 <div className="footer-col-header">
                                     <div className="footer-col-dot" />
-                                    <h4 className="footer-col-title">Navigation</h4>
+                                    <h2 className="footer-col-title">Navigation</h2>
                                 </div>
                                 <div className="footer-col-list-wrap">
                                     <div className="footer-col-line" />
@@ -272,7 +272,7 @@ export default function Footer() {
                             <div>
                                 <div className="footer-col-header">
                                     <div className="footer-col-dot" />
-                                    <h4 className="footer-col-title">Help</h4>
+                                    <h2 className="footer-col-title">Help</h2>
                                 </div>
                                 <div className="footer-col-list-wrap">
                                     <div className="footer-col-line" />

@@ -44,8 +44,7 @@ export default function Navbar() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
+        
         .nb-shell {
           position: fixed;
           top: 0; left: 0;
@@ -276,7 +275,7 @@ export default function Navbar() {
       <div className="nb-shell">
         <nav className={`nb-bar${scrolled ? " scrolled" : ""}${isOpen ? " menu-open" : ""}`}>
 
-          <Link href="#home" className="nb-brand">
+          <Link href="#home" className="nb-brand" aria-label="Home">
             {/* <img src="/logo.png" alt="VD Patil Logo" className="nb-logo-img" />
             <div className="nb-brand-text">
               <span className="nb-logo-title">VD PATIL</span>
@@ -324,10 +323,10 @@ export default function Navbar() {
               </div>
             </Link>
 
-            <button className="nb-icon-btn-show nb-icon-btn" onClick={() => setIsOpen(!isOpen)}>
+            <button className="nb-icon-btn-show nb-icon-btn" aria-label="Toggle Menu" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <X size={16} color="#fff" strokeWidth={2.5} /> : <Menu size={16} color="#fff" strokeWidth={2.5} />}
             </button>
-            <button className="nb-icon-btn-hide nb-icon-btn" onClick={() => setIsOpen(!isOpen)}>
+            <button className="nb-icon-btn-hide nb-icon-btn" aria-label="Toggle Menu" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <X size={16} color="#fff" strokeWidth={2.5} /> : <Menu size={16} color="#fff" strokeWidth={2.5} />}
             </button>
 

@@ -26,8 +26,7 @@ export default function Hero() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;800&family=Montserrat:wght@400;600&display=swap');
-
+        
         .hero-viewport {
           margin-top: 70px;
           height: 90vh;
@@ -35,7 +34,7 @@ export default function Hero() {
           background: #000;
           position: relative;
           overflow: hidden;
-          font-family: 'Montserrat', sans-serif;
+          font-family: var(--font-mont), sans-serif;
         }
 
         .yt-loader {
@@ -168,6 +167,9 @@ export default function Hero() {
           src={HERO_IMG}
           alt="Vinayak Dabhade"
           className="hero-image"
+          width={600}
+          height={400}
+          fetchPriority="high"
           style={{ opacity: imageLoaded && !showVideo ? 1 : 0 }}
           onLoad={() => setImageLoaded(true)}
         />
@@ -187,7 +189,7 @@ export default function Hero() {
         <div className="vignette" />
 
         <div className="absolute top-10 left-10 z-50">
-          <span style={{ fontFamily: 'Syne', fontWeight: 800, color: '#fff', fontSize: '1.2rem', letterSpacing: '-0.02em' }} />
+          <span style={{ fontFamily: 'var(--font-syne)', fontWeight: 800, color: '#fff', fontSize: '1.2rem', letterSpacing: '-0.02em' }} />
         </div>
 
         {/* BOTTOM LEFT: SOCIALS */}
@@ -200,16 +202,16 @@ export default function Hero() {
           <p className="ui-label">Be part of our journey</p>
           <div className="social-icons">
             {/* Instagram */}
-            <a href="https://www.instagram.com/vdpes.official/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/vdpes.official/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
             </a>
             {/* X (Twitter) */}
-            <a href="https://www.facebook.com/profile.php?id=61575354415543" target="_blank" rel="noopener noreferrer">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-</svg>            </a>
+            <a href="https://www.facebook.com/profile.php?id=61575354415543" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>            </a>
             {/* YouTube */}
-            <a href="https://www.youtube.com/@vdpes_official" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/@vdpes_official" target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29.1 29.1 0 0 0 1 12a29.1 29.1 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29.1 29.1 0 0 0 23 12a29.1 29.1 0 0 0-.46-5.58z" /><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" /></svg>
             </a>
           </div>
@@ -238,7 +240,7 @@ export default function Hero() {
 
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <h2 style={{
-            fontFamily: 'Syne',
+            fontFamily: 'var(--font-syne)',
             fontSize: '12vw',
             fontWeight: 800,
             color: 'rgba(255,255,255,0.02)',

@@ -163,7 +163,7 @@ function ContentBlock({ block }) {
         case 'paragraph':
             return <p style={{ ...textStyle, fontSize: '1.1rem', marginBottom: 28 }}>{block.text}</p>;
         case 'heading':
-            return <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#fff', marginTop: 56, marginBottom: 24, fontFamily: "'Syne', sans-serif" }}>{block.text}</h2>;
+            return <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#fff', marginTop: 56, marginBottom: 24, fontFamily: "var(--font-syne), sans-serif" }}>{block.text}</h2>;
         case 'bullets':
             return (
                 <ul style={{ paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 28 }}>
@@ -198,10 +198,9 @@ export default function EventPost() {
     const relatedEvents = ALL_EVENTS_BRIEF.filter(e => String(e.id) !== String(eventId)).slice(0, 3);
 
     return (
-        <div style={{ backgroundColor: '#000', minHeight: '100vh', color: '#fff', fontFamily: "'Montserrat', sans-serif" }}>
+        <div style={{ backgroundColor: '#000', minHeight: '100vh', color: '#fff', fontFamily: "var(--font-mont), sans-serif" }}>
             <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700&family=Montserrat:wght@400;500;600&display=swap');
-                
+                                
                 .share-btn {
                     display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px;
                     border-radius: 100px; border: 1px solid rgba(255,255,255,0.1); background: #0a0a0a;
@@ -291,7 +290,7 @@ export default function EventPost() {
                     fontSize: 'clamp(2.2rem, 5vw, 3.8rem)',
                     fontWeight: 400, color: '#fff',
                     lineHeight: 1.1, marginBottom: 32,
-                    fontFamily: "'Syne', sans-serif",
+                    fontFamily: "var(--font-syne), sans-serif",
                     letterSpacing: '-0.02em'
                 }}>
                     {event.title}
@@ -337,14 +336,14 @@ export default function EventPost() {
                     {event.gallery && event.gallery.length > 0 && (
                         <>
                             <div className="gallery-hero">
-                                <img src={event.gallery[0]} alt="Event hero" />
+                                <img src={event.gallery[0]} alt="Event hero" width={1600} height={600} />
                             </div>
 
                             {event.gallery.length > 1 && (
                                 <div className="gallery-grid">
                                     {event.gallery.slice(1, 5).map((img, idx) => (
                                         <div key={idx} className="gallery-grid-item">
-                                            <img src={img} alt={`Event photo ${idx + 2}`} />
+                                            <img src={img} alt={`Event photo ${idx + 2}`} width={600} height={450} />
                                         </div>
                                     ))}
                                 </div>
@@ -374,7 +373,7 @@ export default function EventPost() {
             {/* More Posts Section */}
             <section style={{ backgroundColor: '#050505', borderTop: '1px solid rgba(255,255,255,0.05)', padding: '80px 24px' }}>
                 <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-                    <h2 style={{ fontSize: '1.8rem', fontWeight: 400, marginBottom: 40, fontFamily: "'Syne', sans-serif" }}>Explore <span style={{ opacity: 0.3 }}>Events</span></h2>
+                    <h2 style={{ fontSize: '1.8rem', fontWeight: 400, marginBottom: 40, fontFamily: "var(--font-syne), sans-serif" }}>Explore <span style={{ opacity: 0.3 }}>Events</span></h2>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
                         {relatedEvents.map(re => (
                             <Link key={re.id} href={`/event/${re.id}`} className="related-card">

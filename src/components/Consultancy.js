@@ -1,5 +1,6 @@
 'use client';
 import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 const EXPERTISE_PILLS = [
     "Executive Leadership",
@@ -27,7 +28,7 @@ export default function Consultancy() {
                     padding: 100px 24px;
                     display: flex;
                     justify-content: center;
-                    font-family: 'Montserrat', system-ui, sans-serif;
+                    font-family: var(--font-mont), system-ui, sans-serif;
                     position: relative;
                 }
                 .cons-wrapper {
@@ -71,7 +72,7 @@ export default function Consultancy() {
                     flex-direction: column;
                 }
                 .cons-title {
-                    font-family: 'Syne', sans-serif;
+                    font-family: var(--font-syne), sans-serif;
                     font-size: clamp(2.5rem, 5vw, 4rem);
                     font-weight: 400;
                     color: #fff;
@@ -91,7 +92,7 @@ export default function Consultancy() {
                 
                 /* Pills Area */
                 .cons-pills-label {
-                    color: rgba(255,255,255,0.4);
+                    color: rgba(255,255,255,0.7);
                     font-size: 0.8rem;
                     font-weight: 600;
                     text-transform: uppercase;
@@ -176,10 +177,13 @@ export default function Consultancy() {
             <div className="cons-wrapper">
                 {/* Left Side: Photo */}
                 <div className="cons-image-wrapper">
-                    <img
+                    <Image
                         src="/coach-hero.png"
                         alt="VD Patil Consulting"
                         className="cons-image"
+                        width={800}
+                        height={1000}
+                        priority
                     />
                     <div className="cons-image-overlay"></div>
                 </div>

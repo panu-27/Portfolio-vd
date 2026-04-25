@@ -10,7 +10,7 @@ export default function JoinCommunity() {
                     padding: 100px 24px;
                     display: flex;
                     justify-content: center;
-                    font-family: 'Montserrat', system-ui, sans-serif;
+                    font-family: var(--font-mont), system-ui, sans-serif;
                     border-top: 1px solid rgba(255,255,255,0.05);
                     position: relative;
                     overflow: hidden;
@@ -50,7 +50,7 @@ export default function JoinCommunity() {
                 }
 
                 .jc-title {
-                    font-family: 'Syne', sans-serif;
+                    font-family: var(--font-syne), sans-serif;
                     font-size: clamp(2rem, 5vw, 3.5rem);
                     font-weight: 400;
                     color: #fff;

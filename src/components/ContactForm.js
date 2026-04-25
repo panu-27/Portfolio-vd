@@ -114,7 +114,7 @@ export default function ContactForm() {
                     padding: 80px 24px;
                     display: flex;
                     justify-content: center;
-                    font-family: 'Montserrat', system-ui, sans-serif;
+                    font-family: var(--font-mont), system-ui, sans-serif;
                     border-top: 1px solid rgba(255,255,255,0.05);
                 }
 
@@ -140,12 +140,12 @@ export default function ContactForm() {
                     font-weight: 700;
                     text-transform: uppercase;
                     letter-spacing: 0.2em;
-                    color: rgba(255,255,255,0.35);
+                    color: rgba(255,255,255,0.7);
                     margin-bottom: 16px;
                 }
 
                 .cf-info-title {
-                    font-family: 'Syne', sans-serif;
+                    font-family: var(--font-syne), sans-serif;
                     font-size: clamp(2rem, 4vw, 3rem);
                     font-weight: 400;
                     color: #fff;
@@ -155,7 +155,7 @@ export default function ContactForm() {
                 }
 
                 .cf-info-desc {
-                    color: rgba(255,255,255,0.45);
+                    color: rgba(255,255,255,0.7);
                     font-size: 0.95rem;
                     line-height: 1.7;
                     margin-bottom: 48px;
@@ -200,7 +200,7 @@ export default function ContactForm() {
                     font-weight: 700;
                     text-transform: uppercase;
                     letter-spacing: 0.15em;
-                    color: rgba(255,255,255,0.3);
+                    color: rgba(255,255,255,0.7);
                     margin-bottom: 4px;
                 }
 
@@ -217,7 +217,7 @@ export default function ContactForm() {
                     display: inline-flex;
                     align-items: center;
                     gap: 5px;
-                    color: rgba(255,255,255,0.35);
+                    color: rgba(255,255,255,0.7);
                     font-size: 0.75rem;
                     font-weight: 600;
                     text-transform: uppercase;
@@ -256,7 +256,7 @@ export default function ContactForm() {
                 }
 
                 .cf-title {
-                    font-family: 'Syne', sans-serif;
+                    font-family: var(--font-syne), sans-serif;
                     font-size: 1.6rem;
                     font-weight: 400;
                     color: #fff;
@@ -265,7 +265,7 @@ export default function ContactForm() {
                 }
 
                 .cf-subtitle {
-                    color: rgba(255,255,255,0.35);
+                    color: rgba(255,255,255,0.7);
                     font-size: 0.85rem;
                     margin-bottom: 28px;
                 }
@@ -281,7 +281,7 @@ export default function ContactForm() {
                 .cf-full { grid-column: 1 / -1; }
 
                 .cf-label {
-                    color: rgba(255,255,255,0.4);
+                    color: rgba(255,255,255,0.7);
                     font-size: 0.7rem;
                     font-weight: 700;
                     text-transform: uppercase;
@@ -326,7 +326,7 @@ export default function ContactForm() {
                     transition: border-color 0.2s;
                 }
                 .cf-dropdown-header:hover { border-color: rgba(255,255,255,0.25); }
-                .cf-dropdown-header.placeholder { color: rgba(255,255,255,0.2); }
+                .cf-dropdown-header.placeholder { color: rgba(255,255,255,0.7); }
                 .cf-dropdown-header.error { border-color: rgba(255,80,80,0.5); }
                 .cf-dropdown-list {
                     position: absolute;
@@ -488,7 +488,7 @@ export default function ContactForm() {
                             <div className="cf-field-group cf-full">
                                 <label className="cf-label">
                                     Message
-                                    <span style={{ color: 'rgba(255,255,255,0.2)', fontWeight: 400, marginLeft: 6 }}>
+                                    <span style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400, marginLeft: 6 }}>
                                         ({formData.message.length}/500)
                                     </span>
                                 </label>

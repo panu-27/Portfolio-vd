@@ -1,7 +1,12 @@
-import { Outfit } from "next/font/google";
+import { Outfit, Bebas_Neue, Syne, Montserrat, Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({ subsets: ["latin"] });
+const outfit = Outfit({ subsets: ["latin"], variable: '--font-outfit' });
+const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'], variable: '--font-bebas' });
+const syne = Syne({ subsets: ['latin'], variable: '--font-syne' });
+const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-mont' });
+const barlow = Barlow({ weight: ['300', '400', '700', '800', '900'], subsets: ['latin'], variable: '--font-barlow' });
+const barlowCondensed = Barlow_Condensed({ weight: ['300', '400', '700', '800', '900'], subsets: ['latin'], variable: '--font-barlow-cond' });
 
 export const metadata = {
   metadataBase: new URL('https://vdpatil.com'),
@@ -118,7 +123,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={outfit.className}>{children}</body>
+      <body className={`${outfit.className} ${outfit.variable} ${bebas.variable} ${syne.variable} ${montserrat.variable} ${barlow.variable} ${barlowCondensed.variable}`}>{children}</body>
     </html>
   );
 }
